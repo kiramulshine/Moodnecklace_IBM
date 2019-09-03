@@ -1,0 +1,415 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,.5); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+#status {
+  background-color: black
+  padding: 10px;
+  color: white;
+}
+
+pre {
+    color: white;
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#000000;
+/*    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #A7A7A7),
+        color-stop(0.51, #E4E4E4)
+    );*/
+    background-attachment:fixed;
+    font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    text-align: center;
+/*    text-transform:uppercase;
+*/    width:100%;
+}
+
+/* Portrait layout (default) */
+app {
+    background-color: black;
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+     /*   background-position:left center;*/
+/*        padding:75px 0px 75px 170px;*/  /* padding-top + padding-bottom + text area = image height */
+  /*      margin:-90px 0px 0px -198px; */ /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+h1 {
+    overflow: visible;
+    text-align:center;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+    color: white;
+    letter-spacing: 2px;
+    padding-top: 25px;
+    font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 2px;
+    font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+}
+
+p {
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+}
+
+pre {
+    col or: white;
+    text-align: center;
+    font-size: 14px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+}
+/*moodmap specific pages*/
+
+#resultDiv {
+    font: 16px 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+    font-weight: 200;
+    display: block;
+    width: 100%;
+    height: 100px;
+    text-align: center;    
+    overflow: auto;
+    color: white;
+}
+
+#emotion {
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+}
+
+#deviceList {
+    font: 18px 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+    padding: 10px 5px;        
+    height: 50px;  
+    color: white;
+    font-weight: 200;
+    display: block;
+    width: 100%;
+    text-align: center;    
+    overflow: auto;
+}
+
+#partnerMood {
+    font: 16px 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+    padding: 10px 5px;        
+    min-height: 50px;  
+    font-size: 0.9em;
+    color: white;
+    font-weight: 200;
+    display: block;
+    width: 100%;
+    text-align: center;    
+    overflow: auto;
+}
+/*list item*/
+
+#deviceList ul {
+    list-style: none;
+    text-align: center;
+    color: white;
+    font: 18px 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+}
+
+#deviceList li {
+    padding: 10px 5px;        
+    min-height: 50px;  
+    color: white;
+    font-weight: 200;
+    display: block;
+    width: 100%;
+    font: 18px 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+    text-align: center;    
+    overflow: auto;
+}
+
+
+/*detail page*/
+
+#detailPage {
+    width: 100%;
+    color: white;
+    font: 16px 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+
+}
+
+/*label*/
+.label {
+    background: black;
+    padding:8px;    
+    border-radius: 4px;
+    color: white;
+    margin-top: 10px;
+    display:inline-block;
+    font-size: 14px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+}
+/*FORM*/
+
+form {
+    font-size: 14px;
+    font-weight: lighter;
+    color: white;
+    letter-spacing: 2px;
+    font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+}
+
+
+form input {
+    padding: 0px;
+    margin-left: 25px;
+    border-width: 0px;
+    border-style: none;
+    border-radius: 10px;
+}
+
+/*form submit*/
+form #submit {
+    padding: 10px;
+    letter-spacing: 1px;
+    border-radius: 25px;
+    font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+    background-color: transparent;
+    border-radius: 15px;
+    border: 0;
+    box-shadow: inset 0 0 0 1px #ffffff;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 300;
+    letter-spacing: 0.15rem;
+/*  line-height: 2.75rem;
+  outline: 0;
+/*  padding: 0 1.25rem 0 1.35rem;
+*/  text-align: center;
+    text-decoration: none;
+/*  text-transform: uppercase;
+*/  white-space: nowrap;
+}
+
+/*submit buttons*/
+form #submit:disabled {
+    -moz-pointer-events: none;
+    -webkit-pointer-events: none;
+    -ms-pointer-events: none;
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.25; }
+
+/*a tags*/
+a {
+    font-size: 18px;
+    border: solid 1px;
+    border-radius: 25px;
+    padding: 15px;
+    text-decoration: none;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    color: aqua;
+    font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;}
+
+#sendButton {
+    font-size: 18px;
+    border: solid 1px;
+    border-radius: 25px;
+    padding: 15px;
+    position: center;
+    text-decoration: none;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    color: aqua;
+    background-color: black;
+    font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+}
+
+#connectButton {
+    font-size: 18px;
+    border: solid 1px;
+    border-radius: 25px;
+    padding: 15px;
+    position: center;
+    text-decoration: none;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    color: aqua;
+    background-color: black;
+    font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+}
+
+
+#enjoymentButton {
+    font-size: 18px;
+    border: solid 1px;
+    border-radius: 25px;
+    padding: 15px;
+    position: center;
+    text-decoration: none;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    color: aqua;
+    background-color: black;
+    font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+}
+
+#sadnessButton {
+    font-size: 18px;
+    border: solid 1px;
+    border-radius: 25px;
+    padding: 15px;
+    position: center;
+    text-decoration: none;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    color: aqua;
+    background-color: black;
+    font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+}
+
+#disgustButton {
+    font-size: 18px;
+    border: solid 1px;
+    border-radius: 25px;
+    padding: 15px;
+    position: center;
+    text-decoration: none;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    color: aqua;
+    background-color: black;
+    font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+}
+
+#fearButton {
+    font-size: 18px;
+    border: solid 1px;
+    border-radius: 25px;
+    padding: 15px;
+    position: center;
+    text-decoration: none;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    color: aqua;
+    background-color: black;
+    font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+}
+
+#angerButton {
+    font-size: 18px;
+    border: solid 1px;
+    border-radius: 25px;
+    padding: 15px;
+    position: center;
+    text-decoration: none;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    color: aqua;
+    background-color: black;
+    font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+}
+
+#cloudButton {
+    font-size: 18px;
+    border: solid 1px;
+    border-radius: 25px;
+    padding: 15px;
+    position: center;
+    text-decoration: none;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    color: aqua;
+    background-color: black;
+    font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+
