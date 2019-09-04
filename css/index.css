@@ -54,6 +54,7 @@ body {
     text-align: center;
 /*    text-transform:uppercase;
 */    width:100%;
+    padding-bottom: 100px;
 }
 
 /* Portrait layout (default) */
@@ -135,7 +136,7 @@ pre {
 
 #deviceList {
     font: 18px 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
-    padding: 10px 5px;        
+    padding: 5px 5px;        
     height: 50px;  
     color: white;
     font-weight: 200;
@@ -282,6 +283,7 @@ a {
     border: solid 1px;
     border-radius: 25px;
     padding: 15px;
+    margin-bottom: 50px;
     position: center;
     text-decoration: none;
     font-weight: lighter;
@@ -306,6 +308,33 @@ a {
     font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
 }
 
+#moodButton {
+    font-size: 18px;
+    border: solid 1px;
+    border-radius: 25px;
+    padding: 15px;
+    position: center;
+    text-decoration: none;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    color: aqua;
+    background-color: black;
+    font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+}
+
+#moodLog {
+    font-size: 18px;
+    border: solid 1px;
+    border-radius: 25px;
+    padding: 15px;
+    position: center;
+    text-decoration: none;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    color: grey;
+    background-color: white;
+    font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+}
 #sadnessButton {
     font-size: 18px;
     border: solid 1px;
