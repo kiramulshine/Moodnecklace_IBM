@@ -11,7 +11,7 @@
         <link rel="stylesheet" type="text/css" href="css/jquery-1.5.0.mobile.min.css" />
         <link rel="stylesheet" type="text/css" href="css/spectrum.css" />
 
-               <title>Moodring2.0</title>
+               <title>MoodringNecklace</title>
     </head>
 
     <!-- body -->
@@ -23,7 +23,11 @@
         <img src="img/logo.jpg" width="100" height="100"> 
     </h1>
                 
-    <h2>Update Moodmap</h2>  
+    <h2>Log Your Mood</h2>  
+<!-- mainPage - connect to device & show list -->
+    <div id="mainPage">
+        <ul id="deviceList">
+        </ul>
 <!-- mainPage - connect to device & show list -->
     <div id="mainPage">
         <ul id="deviceList">
@@ -32,60 +36,26 @@
 
     </div>
 
-<!-- detailPage - colors submit to ring when click "Update my ring a-tag" -->
+<!-- detailPage - color submits to ring when click "Update my ring a-tag" -->
+
     <div id="detailPage">
 
-        <div id="resultDiv">
-            <!-- where data from your own ring will be displayed -->
-            </div>
-<!-- emotion color pickers -->
+<!-- mood log color picker -->
         <div>
 
             <input type="text" id="enjoymentInput" class="basic" value="#00ffff"/>
-            <button id="enjoymentButton">Update enjoyment</button>     
+            <button id="enjoymentButton">Assign color</button>     
         </div>
+
+<!-- mood log definition -->
 
         <div>
-
-            <input type="text" id="sadnessInput" class="basic" value="#0000ff"/>
-            <button id="sadnessButton">Update sadness</button>                    
+            <form action="/send" method="POST">
+                <input type="text" id ="moodLog" name="currentMood" placeholder="Enter mood"/>
+                <input type="submit" id="moodButton" value="Submit"/>
+            </form>
         </div>
 
-        <div>
-
-            <input type="text" id="disgustInput" class="basic" value="#00ff00"/>
-            <button id="disgustButton">Update disgust</button>                    
-        </div>
-
-        <div>
-
-            <input type="text" id="fearInput" class="basic" value="#cc33ff"/>
-            <button id="fearButton">Update fear</button>                    
-        </div>
-
-        <div>
-
-            <input type="text" id="angerInput" class="basic" value="#ff0000"/>
-            <button id="angerButton">Update anger</button> 
-
-        </div>
-
-    <p><br><br>
-      <a href="cloud.html">Share with partner</a>
-    </p><br><br>
-
-    <p><br><br>
-      <a href="partner.html">View partner info</a>
-    </p><br><br><br><br>
-   
-    <!-- <br><br><p>
-        <a href="index.html">Reset map</a>
-    </p>
-    <br><br> -->
-
-<!--     <p>
-        <a href="moodMap.html">Back to my map</a>
-    </p><br><br> -->
 
 
 </div>
