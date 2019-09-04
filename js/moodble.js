@@ -49,10 +49,6 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         connectButton.addEventListener('touchstart', this.scanForDevice, false);
         enjoymentButton.addEventListener('click', this.sendEnjoyment, false);
-        sadnessButton.addEventListener('click', this.sendSadness, false);
-        disgustButton.addEventListener('click', this.sendDisgust, false);
-        fearButton.addEventListener('click', this.sendFear, false);
-        angerButton.addEventListener('click', this.sendAnger, false);
 
 
         // disconnectButton.addEventListener('touchstart', this.disconnect, false);
@@ -117,13 +113,13 @@ var app = {
     },
 
 
-onData: function(data) { // data received from ring
+onData: function(data) { // data received from necklace
         console.log(data);
         resultDiv.innerHTML = resultDiv.innerHTML + "Received: " + bytesToString(data) + "<br/>";
         resultDiv.scrollTop = resultDiv.scrollHeight;
     },
 
-sendEnjoyment: function(event) { // send enjoyment data to ring
+sendEnjoyment: function(event) { // send mood data to necklace
 
 
         var success = function() {
@@ -134,7 +130,7 @@ sendEnjoyment: function(event) { // send enjoyment data to ring
         };
 
         var failure = function() {
-            alert("Failed sending enjoyment to ring. Check your settings to make sure you connected to your ring via bluetooth ;)");
+            alert("Failed sending mood to necklace. But don't fret. Just check your settings to make sure your bluetooth connection was successful ;)");
         };
 
         var enjoy = stringToBytes('E' + enjoymentInput.value);
@@ -153,142 +149,6 @@ sendEnjoyment: function(event) { // send enjoyment data to ring
                 bluefruit.serviceUUID,
                 bluefruit.txCharacteristic,
                 enjoy, success, failure
-            );
-        }
-    },
-sendSadness: function(event) { // send sadness data to ring
-
-
-        var success = function() {
-
-            console.log("success");
-            resultDiv.innerHTML = resultDiv.innerHTML + "Sadness, mapped: " + sadnessInput.value + "<br/>";
-            resultDiv.scrollTop = resultDiv.scrollHeight;
-        };
-
-        var failure = function() {
-            alert("Failed sending sadness to ring. Check your settings to make sure you connected to your ring via bluetooth ;)");
-        };
-
-        var sadness = stringToBytes("S" + sadnessInput.value);
-        var deviceId = "0E2EAC28-BD71-C5CE-ECB6-C52F44672D7F";
-
-        if (app.writeWithoutResponse) {
-            ble.writeWithoutResponse(
-                deviceId,
-                bluefruit.serviceUUID,
-                bluefruit.txCharacteristic,
-                sadness, success, failure
-            );
-        } else {
-            ble.write(
-                deviceId,
-                bluefruit.serviceUUID,
-                bluefruit.txCharacteristic,
-                sadness, success, failure
-            );
-        }
-    },
-
-sendDisgust: function(event) { // send disgust data to ring
-
-
-        var success = function() {
-
-            console.log("success");
-            resultDiv.innerHTML = resultDiv.innerHTML + "Disgust, mapped: " + disgustInput.value + "<br/>";
-            resultDiv.scrollTop = resultDiv.scrollHeight;
-        };
-
-        var failure = function() {
-            alert("Failed sending disgust to ring. Check your settings to make sure you connected to your ring via bluetooth ;)");
-        };
-
-        var disgust = stringToBytes("D" + disgustInput.value);
-        var deviceId = "0E2EAC28-BD71-C5CE-ECB6-C52F44672D7F";
-
-        if (app.writeWithoutResponse) {
-            ble.writeWithoutResponse(
-                deviceId,
-                bluefruit.serviceUUID,
-                bluefruit.txCharacteristic,
-                disgust, success, failure
-            );
-        } else {
-            ble.write(
-                deviceId,
-                bluefruit.serviceUUID,
-                bluefruit.txCharacteristic,
-                disgust, success, failure
-            );
-        }
-    },
-
-sendFear: function(event) { // send fear data to ring
-
-
-        var success = function() {
-
-            console.log("success");
-            resultDiv.innerHTML = resultDiv.innerHTML + "Fear, mapped: " + fearInput.value + "<br/>";
-            resultDiv.scrollTop = resultDiv.scrollHeight;
-        };
-
-        var failure = function() {
-            alert("Failed sending fear to ring. But stay calm! All you need to do is check your settings to make sure you connected to your ring via bluetooth ;)");
-        };
-
-        var fear = stringToBytes("F" + fearInput.value);
-        var deviceId = "0E2EAC28-BD71-C5CE-ECB6-C52F44672D7F";
-
-        if (app.writeWithoutResponse) {
-            ble.writeWithoutResponse(
-                deviceId,
-                bluefruit.serviceUUID,
-                bluefruit.txCharacteristic,
-                fear, success, failure
-            );
-        } else {
-            ble.write(
-                deviceId,
-                bluefruit.serviceUUID,
-                bluefruit.txCharacteristic,
-                fear, success, failure
-            );
-        }
-    },
-
-sendAnger: function(event) { // send anger data to ring
-
-
-
-        var success = function() {
-
-            console.log("success");
-            resultDiv.innerHTML = resultDiv.innerHTML + "Anger, mapped: " + angerInput.value + "<br/>";
-            resultDiv.scrollTop = resultDiv.scrollHeight;
-        };
-
-        var failure = function() {
-            alert("Failed sending anger to ring. But stay calm! All you need to do is check your settings to make sure you connected to your ring via bluetooth ;)");
-        };
-
-        var anger = stringToBytes("A" + angerInput.value);
-        var deviceId = "0E2EAC28-BD71-C5CE-ECB6-C52F44672D7F";
-
-        if (app.writeWithoutResponse) {
-            ble.writeWithoutResponse(
-                deviceId,
-                bluefruit.serviceUUID,
-                bluefruit.txCharacteristic,
-                anger, success, failure
-            );
-        } else {
-            ble.write(
-                deviceId,
-                bluefruit.serviceUUID,
-                bluefruit.txCharacteristic,
-                anger, success, failure
             );
         }
     },
