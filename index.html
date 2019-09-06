@@ -43,19 +43,25 @@
 <!-- mood log color picker -->
         <div>
 
-            <input type="text" id="enjoymentInput" class="basic" value="#00ffff"/>
-            <button id="enjoymentButton">Assign color</button>     
+            <input type="text" id="moodInput" class="basic" value="#00ffff"/>
+            <button id="moodButton">Assign color</button>     
         </div>
 
 <!-- mood log definition -->
 
         <div>
             <form action="/send" method="POST">
-                <input type="text" id ="moodLog" name="currentMood" placeholder="Enter mood"/>
-                <input type="submit" id="moodButton" value="Submit"/>
+                <input type="text" id ="moodLog" name="currentMood" placeholder="Write mood"/>
+                <input type="submit" id="logButton" value="Log now"/>
             </form>
         </div>
 
+<!-- Sparkle mode -->
+<div>
+    <br><br>
+            <input type="checkbox" name="sparkleInput" value="sparkle"> Not sure how I feel right now<br>
+            <button id="sparkleButton">Sparkle</button>     
+        </div>
 
 
 </div>
