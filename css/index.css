@@ -146,18 +146,6 @@ pre {
     overflow: auto;
 }
 
-#partnerMood {
-    font: 16px 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
-    padding: 10px 5px;        
-    min-height: 50px;  
-    font-size: 0.9em;
-    color: white;
-    font-weight: 200;
-    display: block;
-    width: 100%;
-    text-align: center;    
-    overflow: auto;
-}
 /*list item*/
 
 #deviceList ul {
@@ -294,11 +282,12 @@ a {
 }
 
 
-#enjoymentButton {
+#sparkleButton {
     font-size: 18px;
     border: solid 1px;
     border-radius: 25px;
     padding: 15px;
+    margin-top: 25px;
     position: center;
     text-decoration: none;
     font-weight: lighter;
@@ -321,6 +310,23 @@ a {
     background-color: black;
     font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
 }
+
+#logButton {
+    font-size: 18px;
+    border: solid 1px;
+    border-radius: 25px;
+    padding: 15px;
+    position: center;
+    text-decoration: none;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    color: aqua;
+    background-color: black;
+    font-family: 'HelveticaNeue-Light', Helvetica, sans-serif, Arial;
+}
+
+
+
 
 #moodLog {
     font-size: 18px;
